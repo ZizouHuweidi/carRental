@@ -16,10 +16,10 @@ public class Car {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@Column(name = "name", nullable = false)
+	@Column(name = "name")
 	private String name;
 
-	@Column(name = "rentalRate", unique = true)
+	@Column(name = "rentalRate")
 	private int rentlRate;
 
 

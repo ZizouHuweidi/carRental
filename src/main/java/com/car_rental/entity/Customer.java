@@ -18,7 +18,7 @@ public class Customer {
 	@Column(name = "name")
 	private String name;
 
-	@Column(name = "email", unique = true)
+	@Column(name = "email")
 	private String email;
 
 	@Column(name = "balance")
