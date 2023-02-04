@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Car Rental System</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+
+	<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+		<!--Brand-->
+		<a class="navbar-brand" href="#">Car Rental System</a>
+		<!-- Navbar Links-->
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link" th:href="@{/cars}">cars</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" th:href="@{/customers}">customers</a>
+				</li>
+			</ul>
+		</div>
+		</div>
+	</nav>
+	<br>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+				<h1 class="text-center">
+					Add New Rental
+				</h1>
+				<div class="card-body">
+					<form th:action="@{/rentals}" th:object="${rental}" method="POST">
+						<div class="form-group">
+							<label>Customer ID</label>
+							<input class="form-control" type="number" name="cstId" th:field="*{cstId}"
+								placeholder="Enter Customer ID" />
+						</div>
+
+						<div class=" form-group">
+							<label>Car ID</label>
+							<input class="form-control" type="number" name="carId" th:field="*{carId}"
+								placeholder="Enter Car ID" />
+						</div>
+
+						<div class=" form-group">
+							<label>Start Date</label>
+							<input class="form-control" type="date" name="startDate" th:field="*{startDate}"
+								placeholder="Enter Start Date" />
+						</div>
+
+						<div class=" form-group">
+							<label>End Date</label>
+							<input class="form-control" type="date" name="finishDate" th:field="*{finishDate}"
+								   placeholder="Enter End Date" />
+						</div>
+
+						<br>
+						<div class="box-footer">
+							<button type="submit" class="btn btn-primary">Create</button>
+						</div>
+
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
